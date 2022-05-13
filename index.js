@@ -41,6 +41,18 @@ async function run() {
             res.send(items)
         })
 
+        // get all items for manageInventories page added by a particular user
+        app.get('/manageInventories/:email', async (req, res) => {
+            const query = { email: req.params.email };
+            const options = {
+                // sort returned documents in ascending order by title (A->Z)
+                sort: { name: 1 },
+            };
+            const cursor = itemsCollection.find(query, options);
+            const items = await cursor.toArray();
+            res.send(items)
+        })
+
         // get a particular item
         app.get('/item/:id', async (req, res) => {
             const id = req.params.id;
