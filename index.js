@@ -79,10 +79,19 @@ async function run() {
             const result = await itemsCollection.deleteOne(query);
             if (result.deletedCount === 1) {
                 console.log("Successfully deleted one document.");
-              } else {
+            } else {
                 console.log("No documents matched the query. Deleted 0 documents.");
-              }
+            }
             res.send(result)
+        })
+
+        // create an item
+        app.post('/add', async (req, res) => {
+            const doc = req.body;
+            const result = await itemsCollection.insertOne(doc);
+            res.send(result)
+            console.log(`A document was inserted with the _id: ${result.insertedId}`);
+
         })
 
 
