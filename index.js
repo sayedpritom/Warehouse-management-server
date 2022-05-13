@@ -33,6 +33,14 @@ async function run() {
             res.send(items)
         })
 
+        // get all items for manageInventories page
+        app.get('/manageInventories', async (req, res) => {
+            const query = {};
+            const cursor = itemsCollection.find(query);
+            const items = await cursor.toArray();
+            res.send(items)
+        })
+
         // get a particular item
         app.get('/item/:id', async (req, res) => {
             const id = req.params.id;
@@ -41,8 +49,8 @@ async function run() {
             res.send(item)
         })
 
-        // update
-        app.put('/item/:id', async (req, res) => {
+        // update an item
+        app.put('/update/:id', async (req, res) => {
             const id = req.params.id;
             const updatedItem = req.body;
             const filter = { _id: ObjectId(id) };
@@ -59,6 +67,21 @@ async function run() {
                 },
             };
             const result = await itemsCollection.updateOne(filter, updateDoc, options);
+            res.send(result)
+        })
+
+        // delete an item
+        app.delete('/delete/:id', async (req, res) => {
+            const id = req.params.id;
+            const updatedItem = req.body;
+            const query = { _id: ObjectId(id) };
+
+            const result = await itemsCollection.deleteOne(query);
+            if (result.deletedCount === 1) {
+                console.log("Successfully deleted one document.");
+              } else {
+                console.log("No documents matched the query. Deleted 0 documents.");
+              }
             res.send(result)
         })
 
