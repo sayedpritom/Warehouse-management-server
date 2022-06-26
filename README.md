@@ -1,10 +1,15 @@
-# Warehouse management website for shoes
+# This is a warehouse management website for a shoe company. Live website link: https://warehouse-eebb3.web.app
 
-This is a website made for managing warehouse inventory of shoes. 
+## This is a website made for managing warehouse inventory of shoes. 
 
-## Website link: https://warehouse-eebb3.web.app
+## Currently your're looking the server. The implemented APIs here are: 
+1. get 6 inventory items for home page
+2. get all items for manageInventories page
+3. get all items for manageInventories page added by a particular user
+4. get, update, create, and delete a particular item
+5. used JWT middleware for user varification
 
-Website features and functionalities: 
+## Implemented front-end features and functionalities: 
 
 * Home page with a header (simple navbar), banner, items (inventory items. Maximum 6 items), advantages section, pricing section, feature section,  footer section.
 
