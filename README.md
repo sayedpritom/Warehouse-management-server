@@ -9,6 +9,8 @@
 4. get, update, create, and delete a particular item
 5. used JWT middleware for user verification
 
+## Front-end Code: https://github.com/sayedpritom999/warehouse-management-client
+
 ## Implemented front-end features and functionalities: 
 
 * Home page with a header (simple navbar), banner, items (inventory items. Maximum 6 items), advantages section, pricing section, feature section,  footer section.
