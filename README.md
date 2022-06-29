@@ -1,6 +1,5 @@
 ## This is a warehouse management website to manage inventory of a shoe company. Live website link: https://warehouse-eebb3.web.app
 
-## This is a website made for managing warehouse inventory of shoes. 
 
 ## Currently you're looking at the server. The implemented APIs here are: 
 1. get 6 inventory items for the "Home" page
