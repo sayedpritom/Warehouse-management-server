@@ -10,7 +10,7 @@
 
 Used Technologies: Node, Express, MongoDB, Heroku
 
-## Front-end Code: https://github.com/sayedpritom999/warehouse-management-client
+## Front-end Code: https://github.com/sayedpritom/warehouse-management-client
 
 ## Implemented front-end features and functionalities: 
 
